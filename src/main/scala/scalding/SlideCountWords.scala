@@ -6,7 +6,7 @@ import org.apache.hadoop.conf.Configuration
 
 class SlideCountWords(args: Args) extends Job(args) {
 
-  import SlideWordCount.text
+  val text = "Wenn hinter Fliegen Fliegen fliegen, fliegen Fliegen Fliegen hinter her."
 
   IterableSource(List(text), 'line)
     .flatMap('line -> 'word) {
